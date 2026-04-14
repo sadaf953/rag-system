@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+slowapi
+pinecone-client
+sentence-transformers
+pypdf
+groq
+python-dotenv
