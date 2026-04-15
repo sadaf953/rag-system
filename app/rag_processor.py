@@ -18,7 +18,7 @@ groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 def ingest_document_to_pinecone(file_path: str, filename: str):
     try:
-        print(f"\n🚀 STARTING PROCESSING: {filename}")
+        print(f"\n STARTING PROCESSING: {filename}")
         time.sleep(1) 
         
         text = ""
@@ -72,7 +72,7 @@ async def retrieve_and_generate_answer(question: str):
         contexts = [match['metadata']['text'] for match in results['matches'] if match['score'] > 0.1]
         
         retrieval_time = time.time() - start_retrieval
-        print(f"⏱️ RETRIEVAL (Pinecone): {retrieval_time:.4f} seconds") # <--- This prints the time
+        print(f"RETRIEVAL (Pinecone): {retrieval_time:.4f} seconds") # <--- This prints the time
 
         if not contexts:
             return "No relevant info found."
@@ -90,14 +90,14 @@ async def retrieve_and_generate_answer(question: str):
         )
         
         gen_time = time.time() - start_gen
-        print(f"⏱️ GENERATION (Groq): {gen_time:.4f} seconds") # <--- This prints the time
+        print(f"GENERATION (Groq): {gen_time:.4f} seconds") # <--- This prints the time
         
-        print(f"📊 TOTAL QUERY TIME: {retrieval_time + gen_time:.4f} seconds\n")
+        print(f"TOTAL QUERY TIME: {retrieval_time + gen_time:.4f} seconds\n")
 
         return completion.choices[0].message.content
 
     except Exception as e:
-        print(f"❌ ERROR: {e}")
+        print(f"ERROR: {e}")
         return "Error occurred."
 
 async def clear_all_knowledge():
