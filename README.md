@@ -48,16 +48,3 @@ PINECONE_API_KEY=
 PINECONE_INDEX_NAME=
 ```
 =======
----
-title: Rag System
-emoji: 🌍
-colorFrom: pink
-colorTo: pink
-sdk: docker
-pinned: false
-license: mit
-short_description: a simple rag system
----
-
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
->>>>>>> 4be7e2e11723a156fc5aa0b54111a5edb9ed3550
