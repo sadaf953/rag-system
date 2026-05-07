@@ -3,7 +3,7 @@ uvicorn
 pydantic
 python-multipart
 slowapi
-pinecone-client
+pinecone
 sentence-transformers
 pypdf
 groq

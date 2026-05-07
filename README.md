@@ -24,3 +24,25 @@ A professional AI system built with **FastAPI**, **Pinecone**, and **Groq (Llama
 - Click **Clear Memory** to start fresh.
 - Upload a PDF and wait for the terminal to say `SUCCESS`.
 - Ask your question and get an AI-generated answer.
+
+
+## Deployment with DOCKER
+
+### Run locally with Docker
+```bash
+docker build -t rag-app .
+docker run -p 8080:8080 --env-file .env rag-app
+```
+
+### Run with Docker Compose
+```bash
+docker-compose up
+```
+
+### Environment Variables
+Create a `.env` file with:
+```
+GROQ_API_KEY=
+PINECONE_API_KEY=
+PINECONE_INDEX_NAME=
+```

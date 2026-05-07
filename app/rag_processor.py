@@ -14,7 +14,7 @@ load_dotenv()
 pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 index = pc.Index(os.getenv("PINECONE_INDEX_NAME"))
 model = SentenceTransformer('all-MiniLM-L6-v2') 
-groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+groq_client = Groq(api_key=os.getenv("GROQ_API_KEY").strip() if os.getenv("GROQ_API_KEY") else None)
 
 def ingest_document_to_pinecone(file_path: str, filename: str):
     try:
@@ -82,7 +82,7 @@ async def retrieve_and_generate_answer(question: str):
 
         context_str = "\n---\n".join(contexts)
         completion = groq_client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="llama-3.1-8b-instant",
             messages=[
                 {"role": "system", "content": "Answer using the context."},
                 {"role": "user", "content": f"Context: {context_str}\n\nQuestion: {question}"}
