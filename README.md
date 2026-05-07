@@ -1,4 +1,13 @@
 <<<<<<< HEAD
+---
+title: RAG System
+emoji: 🤖
+colorFrom: blue
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
 # RAG-Based Question Answering System
 
 A professional AI system built with **FastAPI**, **Pinecone**, and **Groq (Llama 3.3)** to ask questions and get replies with your documents.
