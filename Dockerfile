@@ -26,8 +26,8 @@ COPY . .
 
 # 8. FastAPI usually runs on 8000, but Railway gives you a dynamic port
 # We use 8080 as a standard
-EXPOSE 8080
+EXPOSE 7860
 
 # 9. Start FastAPI using Uvicorn
 # We bind to 0.0.0.0 so it's accessible externally
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8080}"]
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-7860}"]
